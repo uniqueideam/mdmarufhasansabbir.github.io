@@ -1,1 +1,784 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Maruf Hasan Sabbir | Portfolio</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #334155;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul a {
+      color: #cbd5e1;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav ul a:hover {
+      color: #38bdf8;
+    }
+
+    .language-btn {
+      border: none;
+      background: #38bdf8;
+      color: #082f49;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 65px);
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #38bdf8;
+      color: #082f49;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    /* About */
+    .about-box {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #cbd5e1;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: #1e293b;
+      color: #7dd3fc;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-image {
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* YouTube */
+    .youtube-box,
+    .cv-box {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .youtube-box p,
+    .cv-box p {
+      color: #cbd5e1;
+      margin-top: 10px;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-info {
+      color: #cbd5e1;
+      margin: 10px 0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #7dd3fc;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #334155;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #334155;
+      color: #64748b;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .youtube-box,
+      .cv-box {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+
+        <a href="#home" class="logo">
+          Md Maruf Hasan Sabbir
+        </a>
+
+        <ul>
+          <li>
+            <a href="#home"
+               data-bn="হোম"
+               data-en="Home">
+               হোম
+            </a>
+          </li>
+
+          <li>
+            <a href="#about"
+               data-bn="আমার সম্পর্কে"
+               data-en="About Me">
+               আমার সম্পর্কে
+            </a>
+          </li>
+
+          <li>
+            <a href="#portfolio"
+               data-bn="আমার ডিজাইন"
+               data-en="My Designs">
+               আমার ডিজাইন
+            </a>
+          </li>
+
+          <li>
+            <a href="#youtube"
+               data-bn="ইউটিউব"
+               data-en="YouTube">
+               ইউটিউব
+            </a>
+          </li>
+
+          <li>
+            <a href="#cv"
+               data-bn="সিভি"
+               data-en="CV">
+               সিভি
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact"
+               data-bn="যোগাযোগ"
+               data-en="Contact">
+               যোগাযোগ
+            </a>
+          </li>
+        </ul>
+
+        <button class="language-btn" onclick="toggleLanguage()">
+          English
+        </button>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <h1>
+          আমি <span>Md Maruf Hasan Sabbir</span>
+        </h1>
+
+        <p
+          data-bn="আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর। আমার কাজ, দক্ষতা এবং সৃজনশীলতার পরিচয় এখানে দেখতে পারবেন।"
+          data-en="I am a graphic designer and YouTube content creator. Explore my work, skills and creativity here.">
+          আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর।
+          আমার কাজ, দক্ষতা এবং সৃজনশীলতার পরিচয় এখানে দেখতে পারবেন।
+        </p>
+
+        <a
+          href="#portfolio"
+          class="btn"
+          data-bn="আমার কাজ দেখুন"
+          data-en="View My Work">
+          আমার কাজ দেখুন
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2
+          data-bn="আমার সম্পর্কে"
+          data-en="About Me">
+          আমার সম্পর্কে
+        </h2>
+
+        <p
+          data-bn="আমার পরিচয় ও দক্ষতা"
+          data-en="My introduction and skills">
+          আমার পরিচয় ও দক্ষতা
+        </p>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <p
+          data-bn="আমি মোহাম্মদ মারুফ হাসান সাব্বির। আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর। ডিজাইন তৈরি করা, নতুন কিছু শেখা এবং সৃজনশীল কাজ করতে আমি আগ্রহী।"
+          data-en="I am Md Maruf Hasan Sabbir. I am a graphic designer and YouTube content creator. I enjoy creating designs, learning new things and working on creative projects.">
+
+          আমি মোহাম্মদ মারুফ হাসান সাব্বির।
+          আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর।
+          ডিজাইন তৈরি করা, নতুন কিছু শেখা এবং সৃজনশীল কাজ করতে আমি আগ্রহী।
+
+        </p>
+
+
+        <div class="skills">
+
+          <span class="skill">Graphic Design</span>
+
+          <span class="skill">
+            Adobe Illustrator
+          </span>
+
+          <span class="skill">
+            YouTube
+          </span>
+
+          <span class="skill">
+            Creative Work
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2
+          data-bn="আমার ডিজাইন"
+          data-en="My Designs">
+          আমার ডিজাইন
+        </h2>
+
+        <p
+          data-bn="আমার তৈরি করা কিছু কাজ"
+          data-en="Some of my creative work">
+          আমার তৈরি করা কিছু কাজ
+        </p>
+
+      </div>
+
+
+      <div class="portfolio-grid">
+
+
+        <!-- DESIGN 1 -->
+        <div class="project">
+
+          <div class="project-image">
+            Design 01
+          </div>
+
+          <div class="project-content">
+
+            <h3
+              data-bn="ডিজাইন প্রজেক্ট ১"
+              data-en="Design Project 1">
+              ডিজাইন প্রজেক্ট ১
+            </h3>
+
+            <p
+              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
+              data-en="Your design preview will be displayed here.">
+              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DESIGN 2 -->
+        <div class="project">
+
+          <div class="project-image">
+            Design 02
+          </div>
+
+          <div class="project-content">
+
+            <h3
+              data-bn="ডিজাইন প্রজেক্ট ২"
+              data-en="Design Project 2">
+              ডিজাইন প্রজেক্ট ২
+            </h3>
+
+            <p
+              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
+              data-en="Your design preview will be displayed here.">
+              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DESIGN 3 -->
+        <div class="project">
+
+          <div class="project-image">
+            Design 03
+          </div>
+
+          <div class="project-content">
+
+            <h3
+              data-bn="ডিজাইন প্রজেক্ট ৩"
+              data-en="Design Project 3">
+              ডিজাইন প্রজেক্ট ৩
+            </h3>
+
+            <p
+              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
+              data-en="Your design preview will be displayed here.">
+              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- YOUTUBE -->
+  <section id="youtube">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2
+          data-bn="আমার ইউটিউব"
+          data-en="My YouTube">
+          আমার ইউটিউব
+        </h2>
+
+        <p
+          data-bn="আমার ভিডিও ও চ্যানেল"
+          data-en="My videos and channel">
+          আমার ভিডিও ও চ্যানেল
+        </p>
+
+      </div>
+
+
+      <div class="youtube-box">
+
+        <h3
+          data-bn="ইউটিউব চ্যানেল"
+          data-en="YouTube Channel">
+          ইউটিউব চ্যানেল
+        </h3>
+
+        <p
+          data-bn="এখানে তোমার ইউটিউব চ্যানেলের লিংক থাকবে।"
+          data-en="Your YouTube channel link will be here.">
+          এখানে তোমার ইউটিউব চ্যানেলের লিংক থাকবে।
+        </p>
+
+
+        <!-- YOUTUBE LINK -->
+        <a
+          href="#"
+          class="btn"
+          data-bn="চ্যানেল দেখুন"
+          data-en="Visit Channel">
+          চ্যানেল দেখুন
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CV -->
+  <section id="cv">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2
+          data-bn="আমার সিভি"
+          data-en="My CV">
+          আমার সিভি
+        </h2>
+
+        <p
+          data-bn="আমার পেশাগত তথ্য"
+          data-en="My professional information">
+          আমার পেশাগত তথ্য
+        </p>
+
+      </div>
+
+
+      <div class="cv-box">
+
+        <p
+          data-bn="এখানে তোমার CV PDF থাকবে।"
+          data-en="Your CV PDF will be available here.">
+          এখানে তোমার CV PDF থাকবে।
+        </p>
+
+
+        <!-- CV LINK -->
+        <a
+          href="#"
+          class="btn"
+          data-bn="সিভি দেখুন"
+          data-en="View CV">
+          সিভি দেখুন
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2
+          data-bn="যোগাযোগ"
+          data-en="Contact">
+          যোগাযোগ
+        </h2>
+
+        <p
+          data-bn="আমার সাথে যোগাযোগ করুন"
+          data-en="Get in touch with me">
+          আমার সাথে যোগাযোগ করুন
+        </p>
+
+      </div>
+
+
+      <div class="contact">
+
+        <p class="contact-info">
+          <strong>Email:</strong>
+          your-email@example.com
+        </p>
+
+        <p class="contact-info">
+          <strong>Location:</strong>
+          Bangladesh
+        </p>
+
+
+        <div class="social-links">
+
+          <!-- SOCIAL MEDIA LINKS -->
+
+          <a href="#">
+            Facebook
+          </a>
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Md Maruf Hasan Sabbir.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- LANGUAGE SWITCH -->
+  <script>
+
+    let currentLanguage = "bn";
+
+    function toggleLanguage() {
+
+      currentLanguage =
+        currentLanguage === "bn" ? "en" : "bn";
+
+
+      document
+        .querySelectorAll("[data-bn]")
+        .forEach(function(element) {
+
+          element.textContent =
+            element.getAttribute(
+              "data-" + currentLanguage
+            );
+
+        });
+
+
+      document.querySelector(".language-btn").textContent =
+        currentLanguage === "bn"
+          ? "English"
+          : "বাংলা";
+
+    }
+
+  </script>
+
+</body>
+</html>
