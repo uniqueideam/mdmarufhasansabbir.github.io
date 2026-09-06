@@ -1,784 +1,213 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md Maruf Hasan Sabbir | Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maruf Hasan Sabbir — Graphic Designer</title>
+<meta name="description" content="Personal portfolio website of Maruf Hasan Sabbir, Graphic Designer and Creative Visual Artist.">
+<style>
+:root{--bg:#080b16;--panel:#11172a;--panel2:#151d34;--text:#f7f8ff;--muted:#aab3ca;--line:rgba(255,255,255,.1);--a:#7c5cff;--b:#20d5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 10%,rgba(124,92,255,.22),transparent 30%),radial-gradient(circle at 85% 20%,rgba(32,213,255,.15),transparent 28%),linear-gradient(135deg,#080b16,#0d1222 55%,#090d19)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.18;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:42px 42px}
+a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:.5px;font-size:20px}.logo span{color:#8e7aff}nav .links{display:flex;gap:24px;color:var(--muted);font-size:14px}nav .links a:hover{color:white}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:90px 0 80px}
+.eyebrow{color:#8e7aff;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin:15px 0 20px;letter-spacing:-3px}h1 span{background:linear-gradient(90deg,#fff,#a99cff,#62e5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:600px}.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;padding:13px 20px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:14px;background:rgba(255,255,255,.05)}
+.btn.primary{background:linear-gradient(135deg,var(--a),#4e8dff);border:0}.btn:hover{transform:translateY(-2px)}
+.photo-wrap{position:relative;max-width:390px;margin:auto}.photo-wrap:before{content:"";position:absolute;inset:-18px;border-radius:35px;background:linear-gradient(135deg,var(--a),var(--b));filter:blur(25px);opacity:.45}
+.photo{position:relative;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:28px;border:1px solid rgba(255,255,255,.2);background:#fff}
+section{padding:70px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}h2{font-size:34px;line-height:1.15;margin:8px 0}.section-head p{color:var(--muted);max-width:560px;margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:rgba(17,23,42,.78);border:1px solid var(--line);border-radius:22px;padding:28px;backdrop-filter:blur(12px)}.panel p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.tag{padding:8px 12px;border-radius:999px;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.3);font-size:13px;color:#d8d1ff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.portfolio-card,.social-card{display:flex;gap:16px;align-items:center;background:rgba(17,23,42,.78);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.25s}
+.portfolio-card:hover,.social-card:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.65);background:var(--panel2)}.card-icon,.social-icon{width:48px;height:48px;flex:none;border-radius:14px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,#765bff,#20c9e8);color:white}
+.portfolio-card h3{margin:0 0 4px;font-size:17px}.portfolio-card p{margin:0 0 8px;color:var(--muted);font-size:13px}.portfolio-card span{font-size:12px;color:#9f91ff;font-weight:700}
+.social-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.social-card{padding:15px 18px}.social-card strong{display:block;font-size:15px}.social-card small{display:block;color:var(--muted);font-size:12px}.social-card b{margin-left:auto;color:#9f91ff}
+.youtube{display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px;background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(32,213,255,.08));border:1px solid var(--line);border-radius:24px;padding:32px}
+.youtube .yt-btn{background:#ff1744;color:#fff;border:0}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.hero,.about{grid-template-columns:1fr}.hero{padding-top:55px}.photo-wrap{max-width:300px;order:-1}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){nav .links{display:none}h1{letter-spacing:-2px}.grid,.social-grid{grid-template-columns:1fr}.youtube{grid-template-columns:1fr}section{padding:48px 0}}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.lang-switcher{display:flex;gap:8px;align-items:center;margin-left:18px}
+.lang-btn{cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--muted);padding:8px 13px;border-radius:999px;font-weight:700;font-size:12px}
+.lang-btn.active,.lang-btn:hover{background:linear-gradient(135deg,var(--a),#4e8dff);color:#fff;border-color:transparent}
+@media(max-width:560px){.lang-switcher{margin-left:0}.lang-btn{padding:7px 10px}}
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15, 23, 42, 0.95);
-      border-bottom: 1px solid #334155;
-      backdrop-filter: blur(10px);
-    }
-
-    nav {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      color: #38bdf8;
-      font-size: 20px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    nav ul a {
-      color: #cbd5e1;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    nav ul a:hover {
-      color: #38bdf8;
-    }
-
-    .language-btn {
-      border: none;
-      background: #38bdf8;
-      color: #082f49;
-      padding: 9px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero-content {
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: clamp(35px, 6vw, 65px);
-      margin-bottom: 15px;
-    }
-
-    .hero h1 span {
-      color: #38bdf8;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #cbd5e1;
-      font-size: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background: #38bdf8;
-      color: #082f49;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* Sections */
-    section {
-      padding: 90px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: #94a3b8;
-    }
-
-    /* About */
-    .about-box {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      color: #cbd5e1;
-    }
-
-    .skills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .skill {
-      background: #1e293b;
-      color: #7dd3fc;
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: 1px solid #334155;
-    }
-
-    /* Portfolio */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .project {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-image {
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0284c7, #7c3aed);
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    .project-content {
-      padding: 20px;
-    }
-
-    .project-content h3 {
-      margin-bottom: 8px;
-    }
-
-    .project-content p {
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    /* YouTube */
-    .youtube-box,
-    .cv-box {
-      max-width: 750px;
-      margin: auto;
-      text-align: center;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 40px;
-    }
-
-    .youtube-box p,
-    .cv-box p {
-      color: #cbd5e1;
-      margin-top: 10px;
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-    }
-
-    .contact-info {
-      color: #cbd5e1;
-      margin: 10px 0;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .social-links a {
-      background: #1e293b;
-      border: 1px solid #334155;
-      padding: 10px 18px;
-      border-radius: 8px;
-      color: #7dd3fc;
-      transition: 0.3s;
-    }
-
-    .social-links a:hover {
-      background: #334155;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #334155;
-      color: #64748b;
-    }
-
-    /* Mobile */
-    @media (max-width: 800px) {
-      nav {
-        flex-direction: column;
-        padding: 15px 0;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .hero {
-        min-height: 70vh;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .hero h1 {
-        font-size: 35px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .youtube-box,
-      .cv-box {
-        padding: 25px 15px;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
+<div class="container">
+<nav><a class="logo" href="#">MARUF<span>.</span></a><div class="links">
+<a href="#about" data-i18n="navAbout">About</a>
+<a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+<a href="#social" data-i18n="navSocial">Social Media</a>
+<a href="#contact-info" data-i18n="navContact">Contact</a>
+</div>
+<div class="lang-switcher" aria-label="Language selection">
+<button class="lang-btn active" data-lang="en">English</button>
+<button class="lang-btn" data-lang="bn">বাংলা</button>
+</div></nav>
+<header class="hero">
+<div><div class="eyebrow" data-i18n="heroEyebrow">Graphic Designer • Creative Visual Artist</div><h1>Hey, I am<br><span>Maruf Hasan Sabbir</span></h1><p data-i18n="heroText">I create professional and creative visual designs that help brands, businesses and individuals stand out.</p><div class="buttons"><a class="btn primary" href="#portfolio" data-i18n="viewPortfolio">View My Portfolio ↗</a><a class="btn" href="#social" data-i18n="exploreLinks">Explore My Links</a></div></div>
+<div class="photo-wrap"><img class="photo" src="profile-photo.jpeg" alt="Portrait of Maruf Hasan Sabbir"></div>
+</header>
+<section id="about"><div class="section-head"><div><div class="eyebrow" data-i18n="aboutEyebrow">A little about me</div><h2 data-i18n="aboutTitle">Creative ideas, professional design.</h2></div></div><div class="about"><div class="panel"><p data-i18n="aboutText1">I am Maruf Hasan Sabbir, a graphic designer and creative visual artist. My work focuses on clean, engaging and professional visual communication.</p><p data-i18n="aboutText2">This website brings together my design portfolio, contributor profiles and social media pages so visitors can discover my work in one place.</p></div><div class="panel"><h3 data-i18n="servicesTitle">My creative services</h3><div class="tags"><span class="tag">Graphic Design</span><span class="tag">Brand Identity</span><span class="tag">Social Media Design</span><span class="tag">Brochure Design</span><span class="tag">Print Design</span><span class="tag">Creative Visuals</span></div></div></div></section>
+<section id="portfolio"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolioEyebrow">Selected links</div><h2 data-i18n="portfolioTitle">My Portfolio</h2></div><p data-i18n="portfolioText">Explore my work and contributor profiles across different creative platforms.</p></div><div class="grid"><a class="portfolio-card" href="https://stock.adobe.com/contributor/212534484/Maruf%20Hasan%20Sabbir" target="_blank" rel="noopener">
+      <div class="card-icon">A</div>
+      <div><h3>Adobe Stock</h3><p>Stock photos, illustrations and creative assets</p><span>View portfolio ↗</span></div>
+    </a>
+<a class="portfolio-card" href="https://www.shutterstock.com/g/marufhasansabbir" target="_blank" rel="noopener">
+      <div class="card-icon">S</div>
+      <div><h3>Shutterstock</h3><p>My Shutterstock contributor portfolio</p><span>View portfolio ↗</span></div>
+    </a>
+<a class="portfolio-card" href="https://www.alamy.com/stock-photo/?cid=6BZQXM7ZPGKHH9PZT9HJG3TVYFQ9C4Y37Z8W258QCYLL5PM3T7G9ZADMQPYCUFNU&amp;sortBy=relevant" target="_blank" rel="noopener">
+      <div class="card-icon">A</div>
+      <div><h3>Alamy</h3><p>Stock photography and image portfolio</p><span>View portfolio ↗</span></div>
+    </a>
+<a class="portfolio-card" href="https://www.dreamstime.com/marufhasansabbir_info" target="_blank" rel="noopener">
+      <div class="card-icon">D</div>
+      <div><h3>Dreamstime</h3><p>My Dreamstime contributor profile</p><span>View portfolio ↗</span></div>
+    </a>
+<a class="portfolio-card" href="https://www.pond5.com/artist/marufclass999866" target="_blank" rel="noopener">
+      <div class="card-icon">P</div>
+      <div><h3>Pond5</h3><p>Stock illustrations and creative media</p><span>View portfolio ↗</span></div>
+    </a>
+<a class="portfolio-card" href="https://www.behance.net/marufhasansabbir" target="_blank" rel="noopener">
+      <div class="card-icon">B</div>
+      <div><h3>Behance</h3><p>Selected graphic design projects</p><span>View portfolio ↗</span></div>
+    </a></div></section>
+<section id="social"><div class="section-head"><div><div class="eyebrow" data-i18n="socialEyebrow">Find me online</div><h2 data-i18n="socialTitle">Social Media & Profiles</h2></div><p data-i18n="socialText">Follow, connect and explore my latest creative work.</p></div><div class="social-grid"><a class="social-card" href="https://www.facebook.com/mdmarufhasansabbirms" target="_blank" rel="noopener">
+      <span class="social-icon facebook">F</span>
+      <span><strong>Facebook</strong><small>Connect with me on Facebook</small></span>
+      <b>↗</b>
+    </a>
+<a class="social-card" href="https://www.youtube.com/@uniqueIdeam" target="_blank" rel="noopener">
+      <span class="social-icon youtube">Y</span>
+      <span><strong>YouTube</strong><small>Watch my design and creative videos</small></span>
+      <b>↗</b>
+    </a>
+<a class="social-card" href="https://www.behance.net/marufhasansabbir" target="_blank" rel="noopener">
+      <span class="social-icon behance">B</span>
+      <span><strong>Behance</strong><small>Explore my creative projects</small></span>
+      <b>↗</b>
+    </a>
+<a class="social-card" href="https://stock.adobe.com/contributor/212534484/Maruf%20Hasan%20Sabbir" target="_blank" rel="noopener">
+      <span class="social-icon adobe">A</span>
+      <span><strong>Adobe Stock</strong><small>View my stock portfolio</small></span>
+      <b>↗</b>
+    </a>
+<a class="social-card" href="https://www.shutterstock.com/g/marufhasansabbir" target="_blank" rel="noopener">
+      <span class="social-icon shutterstock">S</span>
+      <span><strong>Shutterstock</strong><small>Visit my contributor profile</small></span>
+      <b>↗</b>
+    </a>
+<a class="social-card" href="https://www.pond5.com/artist/marufclass999866" target="_blank" rel="noopener">
+      <span class="social-icon pond5">P</span>
+      <span><strong>Pond5</strong><small>Explore my Pond5 storefront</small></span>
+      <b>↗</b>
+    </a></div></section>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <nav>
-
-        <a href="#home" class="logo">
-          Md Maruf Hasan Sabbir
-        </a>
-
-        <ul>
-          <li>
-            <a href="#home"
-               data-bn="হোম"
-               data-en="Home">
-               হোম
-            </a>
-          </li>
-
-          <li>
-            <a href="#about"
-               data-bn="আমার সম্পর্কে"
-               data-en="About Me">
-               আমার সম্পর্কে
-            </a>
-          </li>
-
-          <li>
-            <a href="#portfolio"
-               data-bn="আমার ডিজাইন"
-               data-en="My Designs">
-               আমার ডিজাইন
-            </a>
-          </li>
-
-          <li>
-            <a href="#youtube"
-               data-bn="ইউটিউব"
-               data-en="YouTube">
-               ইউটিউব
-            </a>
-          </li>
-
-          <li>
-            <a href="#cv"
-               data-bn="সিভি"
-               data-en="CV">
-               সিভি
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact"
-               data-bn="যোগাযোগ"
-               data-en="Contact">
-               যোগাযোগ
-            </a>
-          </li>
-        </ul>
-
-        <button class="language-btn" onclick="toggleLanguage()">
-          English
-        </button>
-
-      </nav>
+<section id="contact-info">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-i18n="contactEyebrow">Get in touch</div>
+      <h2 data-i18n="contactTitle">Contact Information</h2>
     </div>
-  </header>
-
-
-  <!-- HOME -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-
-        <h1>
-          আমি <span>Md Maruf Hasan Sabbir</span>
-        </h1>
-
-        <p
-          data-bn="আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর। আমার কাজ, দক্ষতা এবং সৃজনশীলতার পরিচয় এখানে দেখতে পারবেন।"
-          data-en="I am a graphic designer and YouTube content creator. Explore my work, skills and creativity here.">
-          আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর।
-          আমার কাজ, দক্ষতা এবং সৃজনশীলতার পরিচয় এখানে দেখতে পারবেন।
-        </p>
-
-        <a
-          href="#portfolio"
-          class="btn"
-          data-bn="আমার কাজ দেখুন"
-          data-en="View My Work">
-          আমার কাজ দেখুন
-        </a>
-
-      </div>
+    <p data-i18n="contactText">For design projects, collaborations and professional inquiries, feel free to contact me.</p>
+  </div>
+  <div class="social-grid">
+    <a class="social-card" href="mailto:marufclass99@gmail.com">
+      <span class="social-icon">✉</span>
+      <span><strong data-i18n="emailLabel">Email</strong><small>marufclass99@gmail.com</small></span>
+      <b>↗</b>
+    </a>
+    <a class="social-card" href="https://wa.me/8801613756666" target="_blank" rel="noopener">
+      <span class="social-icon">W</span>
+      <span><strong data-i18n="whatsappLabel">WhatsApp</strong><small>01613756666</small></span>
+      <b>↗</b>
+    </a>
+    <a class="social-card" href="tel:01613756666">
+      <span class="social-icon">☎</span>
+      <span><strong data-i18n="phoneLabel">Phone</strong><small>01613756666</small></span>
+      <b>↗</b>
+    </a>
+    <div class="social-card">
+      <span class="social-icon">BD</span>
+      <span><strong data-i18n="locationLabel">Location</strong><small>Bangladesh</small></span>
     </div>
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-bn="আমার সম্পর্কে"
-          data-en="About Me">
-          আমার সম্পর্কে
-        </h2>
-
-        <p
-          data-bn="আমার পরিচয় ও দক্ষতা"
-          data-en="My introduction and skills">
-          আমার পরিচয় ও দক্ষতা
-        </p>
-
-      </div>
-
-
-      <div class="about-box">
-
-        <p
-          data-bn="আমি মোহাম্মদ মারুফ হাসান সাব্বির। আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর। ডিজাইন তৈরি করা, নতুন কিছু শেখা এবং সৃজনশীল কাজ করতে আমি আগ্রহী।"
-          data-en="I am Md Maruf Hasan Sabbir. I am a graphic designer and YouTube content creator. I enjoy creating designs, learning new things and working on creative projects.">
-
-          আমি মোহাম্মদ মারুফ হাসান সাব্বির।
-          আমি একজন গ্রাফিক ডিজাইনার এবং ইউটিউব কনটেন্ট ক্রিয়েটর।
-          ডিজাইন তৈরি করা, নতুন কিছু শেখা এবং সৃজনশীল কাজ করতে আমি আগ্রহী।
-
-        </p>
-
-
-        <div class="skills">
-
-          <span class="skill">Graphic Design</span>
-
-          <span class="skill">
-            Adobe Illustrator
-          </span>
-
-          <span class="skill">
-            YouTube
-          </span>
-
-          <span class="skill">
-            Creative Work
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-bn="আমার ডিজাইন"
-          data-en="My Designs">
-          আমার ডিজাইন
-        </h2>
-
-        <p
-          data-bn="আমার তৈরি করা কিছু কাজ"
-          data-en="Some of my creative work">
-          আমার তৈরি করা কিছু কাজ
-        </p>
-
-      </div>
-
-
-      <div class="portfolio-grid">
-
-
-        <!-- DESIGN 1 -->
-        <div class="project">
-
-          <div class="project-image">
-            Design 01
-          </div>
-
-          <div class="project-content">
-
-            <h3
-              data-bn="ডিজাইন প্রজেক্ট ১"
-              data-en="Design Project 1">
-              ডিজাইন প্রজেক্ট ১
-            </h3>
-
-            <p
-              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
-              data-en="Your design preview will be displayed here.">
-              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- DESIGN 2 -->
-        <div class="project">
-
-          <div class="project-image">
-            Design 02
-          </div>
-
-          <div class="project-content">
-
-            <h3
-              data-bn="ডিজাইন প্রজেক্ট ২"
-              data-en="Design Project 2">
-              ডিজাইন প্রজেক্ট ২
-            </h3>
-
-            <p
-              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
-              data-en="Your design preview will be displayed here.">
-              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- DESIGN 3 -->
-        <div class="project">
-
-          <div class="project-image">
-            Design 03
-          </div>
-
-          <div class="project-content">
-
-            <h3
-              data-bn="ডিজাইন প্রজেক্ট ৩"
-              data-en="Design Project 3">
-              ডিজাইন প্রজেক্ট ৩
-            </h3>
-
-            <p
-              data-bn="এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।"
-              data-en="Your design preview will be displayed here.">
-              এখানে তোমার ডিজাইনের প্রিভিউ থাকবে।
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- YOUTUBE -->
-  <section id="youtube">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-bn="আমার ইউটিউব"
-          data-en="My YouTube">
-          আমার ইউটিউব
-        </h2>
-
-        <p
-          data-bn="আমার ভিডিও ও চ্যানেল"
-          data-en="My videos and channel">
-          আমার ভিডিও ও চ্যানেল
-        </p>
-
-      </div>
-
-
-      <div class="youtube-box">
-
-        <h3
-          data-bn="ইউটিউব চ্যানেল"
-          data-en="YouTube Channel">
-          ইউটিউব চ্যানেল
-        </h3>
-
-        <p
-          data-bn="এখানে তোমার ইউটিউব চ্যানেলের লিংক থাকবে।"
-          data-en="Your YouTube channel link will be here.">
-          এখানে তোমার ইউটিউব চ্যানেলের লিংক থাকবে।
-        </p>
-
-
-        <!-- YOUTUBE LINK -->
-        <a
-          href="#"
-          class="btn"
-          data-bn="চ্যানেল দেখুন"
-          data-en="Visit Channel">
-          চ্যানেল দেখুন
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CV -->
-  <section id="cv">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-bn="আমার সিভি"
-          data-en="My CV">
-          আমার সিভি
-        </h2>
-
-        <p
-          data-bn="আমার পেশাগত তথ্য"
-          data-en="My professional information">
-          আমার পেশাগত তথ্য
-        </p>
-
-      </div>
-
-
-      <div class="cv-box">
-
-        <p
-          data-bn="এখানে তোমার CV PDF থাকবে।"
-          data-en="Your CV PDF will be available here.">
-          এখানে তোমার CV PDF থাকবে।
-        </p>
-
-
-        <!-- CV LINK -->
-        <a
-          href="#"
-          class="btn"
-          data-bn="সিভি দেখুন"
-          data-en="View CV">
-          সিভি দেখুন
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-bn="যোগাযোগ"
-          data-en="Contact">
-          যোগাযোগ
-        </h2>
-
-        <p
-          data-bn="আমার সাথে যোগাযোগ করুন"
-          data-en="Get in touch with me">
-          আমার সাথে যোগাযোগ করুন
-        </p>
-
-      </div>
-
-
-      <div class="contact">
-
-        <p class="contact-info">
-          <strong>Email:</strong>
-          your-email@example.com
-        </p>
-
-        <p class="contact-info">
-          <strong>Location:</strong>
-          Bangladesh
-        </p>
-
-
-        <div class="social-links">
-
-          <!-- SOCIAL MEDIA LINKS -->
-
-          <a href="#">
-            Facebook
-          </a>
-
-          <a href="#">
-            Instagram
-          </a>
-
-          <a href="#">
-            LinkedIn
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-      © 2026 Md Maruf Hasan Sabbir.
-      All Rights Reserved.
-    </p>
-
-  </footer>
-
-
-  <!-- LANGUAGE SWITCH -->
-  <script>
-
-    let currentLanguage = "bn";
-
-    function toggleLanguage() {
-
-      currentLanguage =
-        currentLanguage === "bn" ? "en" : "bn";
-
-
-      document
-        .querySelectorAll("[data-bn]")
-        .forEach(function(element) {
-
-          element.textContent =
-            element.getAttribute(
-              "data-" + currentLanguage
-            );
-
-        });
-
-
-      document.querySelector(".language-btn").textContent =
-        currentLanguage === "bn"
-          ? "English"
-          : "বাংলা";
-
+  </div>
+</section>
+
+<section id="contact"><div class="youtube"><div><div class="eyebrow" data-i18n="youtubeEyebrow">My YouTube Channel</div><h2 data-i18n="youtubeTitle">Watch my creative journey</h2><p data-i18n="youtubeText">Find tutorials, design-related videos and more on my YouTube channel.</p></div><a class="btn yt-btn" href="https://www.youtube.com/@uniqueIdeam" target="_blank" rel="noopener" data-i18n="visitYoutube">Visit YouTube ↗</a></div></section>
+<footer><span>© 2026 Maruf Hasan Sabbir. All rights reserved.</span><span>Designed with creativity.</span></footer>
+</div>
+
+<script>
+(function(){
+  const translations = {
+    en: {
+      navAbout:"About", navPortfolio:"Portfolio", navSocial:"Social Media", navContact:"Contact",
+      heroEyebrow:"Graphic Designer • Creative Visual Artist",
+      heroText:"I create professional and creative visual designs that help brands, businesses and individuals stand out.",
+      viewPortfolio:"View My Portfolio ↗", exploreLinks:"Explore My Links",
+      aboutEyebrow:"A little about me", aboutTitle:"Creative ideas, professional design.",
+      aboutText1:"I am Maruf Hasan Sabbir, a graphic designer and creative visual artist. My work focuses on clean, engaging and professional visual communication.",
+      aboutText2:"This website brings together my design portfolio, contributor profiles and social media pages so visitors can discover my work in one place.",
+      servicesTitle:"My creative services", portfolioEyebrow:"Selected links", portfolioTitle:"My Portfolio",
+      portfolioText:"Explore my work and contributor profiles across different creative platforms.",
+      socialEyebrow:"Find me online", socialTitle:"Social Media & Profiles",
+      socialText:"Follow, connect and explore my latest creative work.",
+      contactEyebrow:"Get in touch", contactTitle:"Contact Information",
+      contactText:"For design projects, collaborations and professional inquiries, feel free to contact me.",
+      emailLabel:"Email", whatsappLabel:"WhatsApp", phoneLabel:"Phone", locationLabel:"Location",
+      youtubeEyebrow:"My YouTube Channel", youtubeTitle:"Watch my creative journey",
+      youtubeText:"Find tutorials, design-related videos and more on my YouTube channel.",
+      visitYoutube:"Visit YouTube ↗"
+    },
+    bn: {
+      navAbout:"আমার সম্পর্কে", navPortfolio:"পোর্টফোলিও", navSocial:"সোশ্যাল মিডিয়া", navContact:"যোগাযোগ",
+      heroEyebrow:"গ্রাফিক ডিজাইনার • ক্রিয়েটিভ ভিজ্যুয়াল আর্টিস্ট",
+      heroText:"আমি এমন প্রফেশনাল ও সৃজনশীল ডিজাইন তৈরি করি, যা ব্র্যান্ড, ব্যবসা ও ব্যক্তিগত পরিচিতিকে আরও আকর্ষণীয় করে তোলে।",
+      viewPortfolio:"আমার পোর্টফোলিও দেখুন ↗", exploreLinks:"আমার লিংকগুলো দেখুন",
+      aboutEyebrow:"আমার সম্পর্কে", aboutTitle:"সৃজনশীল ভাবনা, প্রফেশনাল ডিজাইন।",
+      aboutText1:"আমি Maruf Hasan Sabbir—একজন গ্রাফিক ডিজাইনার ও ক্রিয়েটিভ ভিজ্যুয়াল আর্টিস্ট। আমার কাজের মূল লক্ষ্য হলো পরিষ্কার, আকর্ষণীয় ও প্রফেশনাল ভিজ্যুয়াল যোগাযোগ তৈরি করা।",
+      aboutText2:"এই ওয়েবসাইটে আমার ডিজাইন পোর্টফোলিও, কন্ট্রিবিউটর প্রোফাইল এবং সোশ্যাল মিডিয়া পেজগুলো একসঙ্গে সাজানো হয়েছে।",
+      servicesTitle:"আমার ক্রিয়েটিভ সার্ভিস", portfolioEyebrow:"গুরুত্বপূর্ণ লিংক", portfolioTitle:"আমার পোর্টফোলিও",
+      portfolioText:"বিভিন্ন ক্রিয়েটিভ প্ল্যাটফর্মে আমার কাজ ও কন্ট্রিবিউটর প্রোফাইলগুলো দেখুন।",
+      socialEyebrow:"অনলাইনে আমাকে খুঁজুন", socialTitle:"সোশ্যাল মিডিয়া ও প্রোফাইল",
+      socialText:"আমার সঙ্গে যুক্ত হন এবং আমার নতুন কাজগুলো দেখুন।",
+      contactEyebrow:"যোগাযোগ করুন", contactTitle:"যোগাযোগের তথ্য",
+      contactText:"ডিজাইন প্রজেক্ট, সহযোগিতা বা পেশাগত কাজে আমার সঙ্গে যোগাযোগ করতে পারেন।",
+      emailLabel:"ইমেইল", whatsappLabel:"হোয়াটসঅ্যাপ", phoneLabel:"ফোন", locationLabel:"লোকেশন",
+      youtubeEyebrow:"আমার ইউটিউব চ্যানেল", youtubeTitle:"আমার ক্রিয়েটিভ যাত্রা দেখুন",
+      youtubeText:"আমার ইউটিউব চ্যানেলে টিউটোরিয়াল, ডিজাইন-সম্পর্কিত ভিডিও এবং আরও অনেক কিছু দেখুন।",
+      visitYoutube:"ইউটিউব দেখুন ↗"
     }
-
-  </script>
+  };
+  function setLanguage(lang){
+    document.documentElement.lang = lang === "bn" ? "bn" : "en";
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+      const key = el.getAttribute("data-i18n");
+      if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+    document.querySelectorAll(".lang-btn").forEach(btn=>{
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    try{ localStorage.setItem("marufLanguage", lang); }catch(e){}
+  }
+  document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>setLanguage(btn.dataset.lang));
+  });
+  let initial = "en";
+  try{ initial = localStorage.getItem("marufLanguage") || "en"; }catch(e){}
+  setLanguage(initial);
+})();
+</script>
 
 </body>
 </html>
